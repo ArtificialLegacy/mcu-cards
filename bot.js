@@ -4,10 +4,10 @@ const fs = require("fs");
 
 bot.on("ready", async () => {
     if(bot.guilds.size > 1) {
-        bot.user.setActivity(`Legacy-RPG on ${bot.guilds.size} servers!`);
+        bot.user.setActivity(`Trading cards on ${bot.guilds.size} servers!`);
         console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`)
     } else {
-        bot.user.setActivity(`Legacy-RPG on ${bot.guilds.size} server!`);
+        bot.user.setActivity(`Trading cards on ${bot.guilds.size} server!`);
         console.log(`${bot.user.username} is online on ${bot.guilds.size} server!`)
     }
     bot.user.setStatus("online");
@@ -16,18 +16,18 @@ bot.on("ready", async () => {
 bot.on("guildCreate", guild => {
     console.log("Joined a new guild: " + guild.name);
     if(bot.guilds.size > 1) {
-        bot.user.setActivity(`Legacy-RPG on ${bot.guilds.size} servers!`);
+        bot.user.setActivity(`Trading cards on ${bot.guilds.size} servers!`);
     } else {
-        bot.user.setActivity(`Legacy-RPG on ${bot.guilds.size} server!`);
+        bot.user.setActivity(`Trading cards on ${bot.guilds.size} server!`);
     }
 });
 
 bot.on("guildDelete", guild => {
     console.log("Left a guild: " + guild.name);
     if(bot.guilds.size > 1) {
-        bot.user.setActivity(`Legacy-RPG on ${bot.guilds.size} servers!`);
+        bot.user.setActivity(`Trading cards on ${bot.guilds.size} servers!`);
     } else {
-        bot.user.setActivity(`Legacy-RPG on ${bot.guilds.size} server!`);
+        bot.user.setActivity(`Trading cards on ${bot.guilds.size} server!`);
     }
 });
 
