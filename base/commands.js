@@ -1,15 +1,15 @@
 class Command {
-  constructor(tempName, tempCooldown, tempCategory, tempDescription, tempFunction) {
+  constructor(tempName, tempCooldown, tempCategory, tempDescription, tempAction) {
     this.name = tempName;
     this.cooldown = tempCooldown;
     this.category = tempCategory;
     this.description = tempDescription;
-    this.function = tempFunction;
+    this.action = tempAction;
     this.activeCooldown = false;
   }
   run(tempArgs) {
     if(this.activeCooldown == false) {
-      this.function(tempArgs);
+      this.action(tempArgs);
       this.activeCooldown = true;
       setTimeout(() => {
             this.activeCooldown = false;
