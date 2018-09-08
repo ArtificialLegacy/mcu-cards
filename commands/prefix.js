@@ -11,7 +11,7 @@ let prefix = new Command("prefix", 0, "admin", "Changes the guild command prefix
   fs.writeFileSync("../database/prefixes.json", JSON.stringify(prefixes,null,4), (err) => {
         if (err) console.log(err)
   });
-  message.reply("Prefix updated);
+  message.reply("Prefix updated");
 });
   
 export prefix;
