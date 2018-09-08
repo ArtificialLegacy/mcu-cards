@@ -5,3 +5,5 @@ class Card {
     this.asset = tempAsset;
   }
 }
+
+module.exports = Card;
