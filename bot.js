@@ -40,11 +40,20 @@ bot.on("message", async () => {
     
     if(!prefixes[message.guild.id]){
         prefixes[message.guild.id] = {
-            prefixes: "!"
+            prefix: "!"
         };
     }
     
-    let prefix = prefixes[message.guild.id].prefixes;
+    let prefix = prefixes[message.guild.id].prefix;
+    
+    if(message.author.bot) return;
+    if(message.channel.type === "dm") return;
+    if(!message.content.startsWith(prefix)) return;
+    
+    let file = `./commands/${cmd}.js`;
+    import command from file
+    
+    command.run(args);
 });
 
 bot.login("ENTER BOT TOKEN HERE");
