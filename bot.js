@@ -32,7 +32,11 @@ bot.on("guildDelete", guild => {
 });
 
 bot.on("message", async () => {
-  
+  let prefixes = JSON.parse(fs.readFileSync("./database/prefixes.json", "utf8"))
+    
+  let messageArray = message.content.split(" ");
+  let cmd = messageArray[0];
+  let args = messageArray.slice(1);
 });
 
 bot.login("ENTER BOT TOKEN HERE");
