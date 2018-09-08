@@ -33,6 +33,6 @@ bot.on("guildDelete", guild => {
 
 bot.on("message", async () => {
   
-})
+});
 
 bot.login("ENTER BOT TOKEN HERE");
