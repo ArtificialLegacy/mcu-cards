@@ -13,7 +13,7 @@ bot.on("ready", async () => {
     bot.user.setStatus("online");
 });
 
-bot.on("guildCreate", guild => {
+bot.on("guildCreate", async guild => {
     console.log("Joined a new guild: " + guild.name);
     if(bot.guilds.size > 1) {
         bot.user.setActivity(`Trading cards on ${bot.guilds.size} servers!`);
@@ -22,7 +22,7 @@ bot.on("guildCreate", guild => {
     }
 });
 
-bot.on("guildDelete", guild => {
+bot.on("guildDelete", async guild => {
     console.log("Left a guild: " + guild.name);
     if(bot.guilds.size > 1) {
         bot.user.setActivity(`Trading cards on ${bot.guilds.size} servers!`);
