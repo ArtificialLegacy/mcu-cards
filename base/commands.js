@@ -7,9 +7,9 @@ class Command {
     this.function = tempFunction;
     this.activeCooldown = false;
   }
-  run() {
+  run(tempArgs) {
     if(this.activeCooldown == false) {
-      this.function();
+      this.function(tempArgs);
       this.activeCooldown = true;
       setTimeout(() => {
             this.activeCooldown = false;
