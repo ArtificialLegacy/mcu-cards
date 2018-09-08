@@ -14,4 +14,4 @@ let prefix = new Command("prefix", 0, "admin", "Changes the guild command prefix
   message.reply("Prefix updated");
 });
   
-export prefix;
+export default prefix;
