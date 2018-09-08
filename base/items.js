@@ -6,4 +6,15 @@ class Card {
   }
 }
 
-module.exports = Card;
+class Pack {
+  constructor(tempName, tempDescription, tempAsset, tempPrice, tempContent) {
+    this.name = tempName;
+    this.description = tempDescription;
+    this.asset = tempAsset;
+    this.price = tempPrice;
+    this.content = tempContent;
+  }
+}
+
+export Card;
+export Pack;
