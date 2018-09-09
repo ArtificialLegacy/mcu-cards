@@ -25,18 +25,29 @@ let help = new Command("help", 30, "info", "Displays info on all commands.", (te
     
     let embed = new Discord.RichEmbed()
     .setTitle("Help")
-    .setColor("#8e278e")
-    .addField("**Info Commands**", " ")
+    .setColor("#8e278e");
     
-    for(i=0; i<cmdSort.info.length-1; i++){
-      embed.addField(cmdSort.info[i].name, cmdSort.info[i].description);
+    if(cmdSort.info.length !== 0){
+      embed.addField("**Info Commands**", " ");
+      for(i=0; i<cmdSort.info.length-1; i++){
+        embed.addField(cmdSort.info[i].name, cmdSort.info[i].description);
+      }
     }
-    for(i=0; i<cmdSort.cards.length-1; i++){
-      embed.addField(cmdSort.cards[i].name, cmdSort.cards[i].description);
+    
+    if(cmdSort.cards.length !== 0){
+      embed.addField("**Card Commands**", " ");
+      for(i=0; i<cmdSort.cards.length-1; i++){
+        embed.addField(cmdSort.cards[i].name, cmdSort.cards[i].description);
+      }
     }
-    for(i=0; i<cmdSort.admin.length-1; i++){
-      embed.addField(cmdSort.admin[i].name, cmdSort.admin[i].description);
+    
+    if(cmdSort.admin.length !== 0){
+      embed.addField("**Admin Commands**", " ");
+      for(i=0; i<cmdSort.admin.length-1; i++){
+        embed.addField(cmdSort.admin[i].name, cmdSort.admin[i].description);
+      }
     }
+    
     message.author.send(embed);
     message.reply("A list of commands have been sent to your dms!");
 });
