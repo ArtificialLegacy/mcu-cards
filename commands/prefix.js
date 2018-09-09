@@ -1,8 +1,8 @@
-import Command from '../base/commands.js';
+let Command = require('../base/commands.js');
 
-let prefix = new Command("prefix", 0, "admin", "Changes the guild command prefix." (tempArgs) => {
+let prefix = new Command("prefix", 0, "admin", "Changes the guild command prefix." (tempMessage, tempArgs, tempPrefix) => {
   if(!tempArgs[0]) {
-    return message.reply("Not prefix input.");
+    return tempMessage.reply("Not prefix input.");
   }
   let prefixes = JSON.parse(fs.readFileSync("../database/prefixes.json", "utf8"));
   prefixes[message.guild.id] = {
@@ -11,7 +11,7 @@ let prefix = new Command("prefix", 0, "admin", "Changes the guild command prefix
   fs.writeFileSync("../database/prefixes.json", JSON.stringify(prefixes,null,4), (err) => {
         if (err) console.log(err)
   });
-  message.reply("Prefix updated");
+  tempMessage.reply("Prefix updated");
 });
   
-export prefix;
+module.exports = prefix;
