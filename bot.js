@@ -1,4 +1,4 @@
-let settings = require('./setup.js');
+let settings = require('./config.js');
 
 const Discord = settings.Discord;
 const fs = settings.fs;
