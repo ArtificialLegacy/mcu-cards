@@ -56,7 +56,7 @@ bot.on("message", async message => {
     
     let command = require(`./commands/${cmd}.js`);
     
-     command[cmd].run(args);
+     command[cmd].run(message, args, prefix);
 });
 
 const token = JSON.parse(fs.readFileSync("./database/token.json", "utf8"));
