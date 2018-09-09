@@ -50,10 +50,9 @@ bot.on("message", async () => {
     if(message.channel.type === "dm") return;
     if(!message.content.startsWith(prefix)) return;
     
-    let file = `./commands/${cmd}.js`;
-    import command from file
+   import command from './base/commandExport';
     
-    command.run(args);
+    command[cmd].run(args);
 });
 
 bot.login("ENTER BOT TOKEN HERE");
