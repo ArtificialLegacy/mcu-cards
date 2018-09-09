@@ -52,7 +52,7 @@ bot.on("message", async () => {
     if(message.channel.type === "dm") return;
     if(!message.content.startsWith(prefix)) return;
     
-   import command from './base/commandExport';
+   let command = import('./base/commandExport');
     
     command[cmd].run(args);
 });
