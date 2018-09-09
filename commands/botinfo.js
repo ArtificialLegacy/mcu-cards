@@ -1,6 +1,6 @@
 let Command = require('../base/commands.js');
 
-let botinfo = new Command("botinfo", 30, "info", "Shows ping and bot information.", (tempArgs) => {
+let botinfo = new Command("botinfo", 30, "info", "Shows ping and bot information.", (tempMessage, tempArgs, tempPrefix) => {
   let boticon = bot.user.displayAvatarURL;
   let embed = new Discord.RichEmbed()
     .setTitle("Bot Information")
