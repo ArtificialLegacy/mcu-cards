@@ -53,10 +53,15 @@ bot.on("message", async message => {
     if(!message.content.startsWith(prefix)) return;
     
     cmd = cmd.slice(prefix.length);
+    console.log(`Command execution attempt: ${prefix}${cmd}${args}`);
     
     let command = require(`./commands/${cmd}.js`);
     
-     command[cmd].run(message, args, prefix);
+    if(command){
+        command.run(message, args, prefix);
+    } else {
+        message.reply("Unknown command.");
+    }
 });
 
 const token = JSON.parse(fs.readFileSync("./database/token.json", "utf8"));
