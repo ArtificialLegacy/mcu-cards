@@ -1,8 +1,8 @@
-import settings from './setup.js';
+let settings = require('./setup.js');
 const Discord = settings.Discord;
 const fs = settings.fs;
 
-const bot = new Discord.Client({disableEveryone: true})
+const bot = new Discord.Client({disableEveryone: true});
 
 bot.on("ready", async () => {
     if(bot.guilds.size > 1) {
@@ -52,9 +52,11 @@ bot.on("message", async message => {
     if(message.channel.type === "dm") return;
     if(!message.content.startsWith(prefix)) return;
     
-   let command = import('./base/commandExport');
+    let cmd = cmd.slice(prefix.length);
     
-    command[cmd].run(args);
+    let command = require(`./commands/${cmd}.js`);
+    
+     command[cmd].run(args);
 });
 
 bot.login("ENTER BOT TOKEN HERE");
