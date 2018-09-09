@@ -1,5 +1,9 @@
 const Discord = require("discord.js");
 const fs = require("fs");
 
-module.exports.Discord = Discord;
-module.exports.fs = fs;
+let settings = {
+  Discord: Discord,
+  fs: fs
+};
+
+module.exports = settings;
