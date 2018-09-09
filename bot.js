@@ -34,7 +34,7 @@ bot.on("guildDelete", async guild => {
 });
 
 bot.on("message", async message => {
-    let prefixes = JSON.parse(fs.readFileSync("./database/prefixes.json", "utf8"))
+    let prefixes = JSON.parse(fs.readFileSync("./database/prefixes.json", "utf8"));
     
     let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
@@ -59,4 +59,5 @@ bot.on("message", async message => {
      command[cmd].run(args);
 });
 
-bot.login("ENTER BOT TOKEN HERE");
+const token = JSON.parse(fs.readFileSync("./database/token.json", "utf8"));
+bot.login(token);
