@@ -27,6 +27,10 @@ class Set {
   }
 }
 
-export Card;
-export Pack;
-export Set;
+let items = {
+  Set: Set,
+  Pack: Pack,
+  Card: Card
+};
+
+module.exports = items;
