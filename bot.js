@@ -52,7 +52,7 @@ bot.on("message", async message => {
     if(message.channel.type === "dm") return;
     if(!message.content.startsWith(prefix)) return;
     
-    let cmd = cmd.slice(prefix.length);
+    cmd = cmd.slice(prefix.length);
     
     let command = require(`./commands/${cmd}.js`);
     
