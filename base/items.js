@@ -1,9 +1,10 @@
 class Card {
-  constructor(tempName, tempDescription, tempAsset, tempPrice) {
+  constructor(tempName, tempDescription, tempAsset, tempPrice, tempRarity) {
     this.name = tempName;
     this.description = tempDescription;
     this.asset = tempAsset;
     this.price = tempPrice;
+    this.rarity = tempRarity; // common, uncommon, rare, epic, legendary, mythical
   }
 }
 
