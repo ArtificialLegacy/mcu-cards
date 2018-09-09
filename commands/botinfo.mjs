@@ -1,4 +1,4 @@
-import Command from '../base/commands.js';
+let Command = require('../base/commands.js');
 
 let botinfo = new Command("botinfo", 30, "info", "Shows ping and bot information.", (tempArgs) => {
   let boticon = bot.user.displayAvatarURL;
@@ -13,4 +13,4 @@ let botinfo = new Command("botinfo", 30, "info", "Shows ping and bot information
     message.channel.send(embed);
 });
 
-export botinfo;
+module.exports = botinfo;
