@@ -18,4 +18,4 @@ class Command {
   }
 }
 
-export Command;
+module.exports Command;
