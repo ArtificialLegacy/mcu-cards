@@ -1,7 +1,6 @@
 let Command = require('../base/commands.js');
 
 let botinfo = new Command("botinfo", 30, "info", "Shows ping and bot information.", (tempMessage, tempArgs, tempPrefix) => {
-  let boticon = bot.user.displayAvatarURL;
   let embed = new Discord.RichEmbed()
     .setTitle("Bot Information")
     .setColor("#8e278e")
@@ -10,7 +9,7 @@ let botinfo = new Command("botinfo", 30, "info", "Shows ping and bot information
     .addField("User Count", bot.guilds.users.size)
     .addField("Ping", (Math.round(bot.ping) + " ms"));
 
-    message.channel.send(embed);
+    tempMessage.channel.send(embed);
 });
 
 module.exports = botinfo;
