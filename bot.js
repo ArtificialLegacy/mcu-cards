@@ -60,4 +60,4 @@ bot.on("message", async message => {
 });
 
 const token = JSON.parse(fs.readFileSync("./database/token.json", "utf8"));
-bot.login(token);
+bot.login(token.token);
