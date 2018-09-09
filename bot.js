@@ -1,8 +1,8 @@
 let settings = require('./setup.js');
+
 const Discord = settings.Discord;
 const fs = settings.fs;
-
-const bot = new Discord.Client({disableEveryone: true});
+const bot = settings.bot;
 
 bot.on("ready", async () => {
     if(bot.guilds.size > 1) {
