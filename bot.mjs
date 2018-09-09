@@ -33,7 +33,7 @@ bot.on("guildDelete", async guild => {
     }
 });
 
-bot.on("message", async () => {
+bot.on("message", async message => {
     let prefixes = JSON.parse(fs.readFileSync("./database/prefixes.json", "utf8"))
     
     let messageArray = message.content.split(" ");
