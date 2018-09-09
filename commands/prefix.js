@@ -1,4 +1,8 @@
 let Command = require('../base/commands.js');
+let settings = require('../config.js');
+const Discord = settings.Discord;
+const bot = settings.bot;
+const fs = settings.fs;
 
 let prefix = new Command("prefix", 0, "admin", "Changes the guild command prefix." (tempMessage, tempArgs, tempPrefix) => {
   if(!tempArgs[0]) {
