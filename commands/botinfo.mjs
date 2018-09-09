@@ -13,4 +13,4 @@ let botinfo = new Command("botinfo", 30, "info", "Shows ping and bot information
     message.channel.send(embed);
 });
 
-export default botinfo;
+export botinfo;
