@@ -1,5 +1,5 @@
-let Command = require('../base/commands.js');
-let settings = require('../config.js');
+import Command from '../base/commands.js';
+import settings from '../config.js';
 const Discord = settings.Discord;
 const bot = settings.bot;
 
@@ -14,4 +14,4 @@ let botinfo = new Command("botinfo", 30, "info", "Shows ping and bot information
     tempMessage.channel.send(embed);
 });
 
-module.exports = botinfo;
+export default botinfo;
