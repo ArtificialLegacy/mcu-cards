@@ -23,7 +23,9 @@ let help = new Command("help", 30, "info", "Displays info on all commands.", (te
       cmdSort = cmdSort[cmdCheck.category].push(cmdCheck);
     });
     
-    let embed = new Discord.RichEmbed()
+  });
+  
+  let embed = new Discord.RichEmbed()
     .setTitle("Help")
     .setColor("#8e278e");
     
