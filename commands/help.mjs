@@ -1,5 +1,5 @@
-let Command = require('../base/commands.js');
-let settings = require('../config.js');
+import Command from '../base/commands.js';
+import settings from '../config.js';
 const Discord = settings.Discord;
 const bot = settings.bot;
 
@@ -53,3 +53,5 @@ let help = new Command("help", 30, "info", "Displays info on all commands.", (te
     message.author.send(embed);
     message.reply("A list of commands have been sent to your dms!");
 });
+
+export default help;
