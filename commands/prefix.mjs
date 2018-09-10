@@ -1,5 +1,5 @@
-let Command = require('../base/commands.js');
-let settings = require('../config.js');
+import Command from '../base/commands.js';
+import settings from '../config.js';
 const Discord = settings.Discord;
 const bot = settings.bot;
 const fs = settings.fs;
@@ -18,4 +18,4 @@ let prefix = new Command("prefix", 0, "admin", "Changes the guild command prefix
   tempMessage.reply("Prefix updated");
 });
   
-module.exports = prefix;
+export default prefix;
