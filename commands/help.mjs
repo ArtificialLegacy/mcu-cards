@@ -11,20 +11,22 @@ let help = new Command("help", 30, "info", "Displays info on all commands.", (te
     "cards": []
   }
   
-  fs.readdir("./", (err, files) => {
-    if(err) console.log(err)
-
-    let jsfile = files.filter(f => f.split(".").pop() === "js")
-    if(jsfile.length <= 0) {
-        return;
+  import commands from '../base/commandExport.mjs';
+  
+  for (var sort in commands) {
+    if (!commands.hasOwnProperty(sort)) {
+        continue;
     }
-
-    jsfile.forEach((f, i) => {
-      cmdCheck = require(`./commands/${f}`);
-      cmdSort = cmdSort[cmdCheck.category].push(cmdCheck);
-    });
-    
-  });
+    if(sort.category == "info"){
+      cmdSort.info.push(sort);
+    } else if(sort.category == "admin"){
+      cmdSort.admin.push(sort);
+    } else if(sort.category == "cards"){
+      cmdSort.cards.push(sort);
+    } else {
+      continue;
+    }
+}
   
   let embed = new Discord.RichEmbed()
     .setTitle("Help")
