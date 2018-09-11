@@ -7,7 +7,7 @@ const EnmapLevel = require('enmap-level');
 const data = new Enmap({
   provider: new EnmapLevel({
     name: 'data' 
-  });
+  })
 });
 
 let settings = {
