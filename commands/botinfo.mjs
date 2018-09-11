@@ -8,7 +8,8 @@ let botinfo = new Command("botinfo", 30, "info", "Shows ping and bot information
     .setTitle("Bot Information")
     .setColor("#8e278e")
     .setThumbnail(bot.user.displayAvatarURL)
-    .addField("Server Count", bot.guilds.size) 
+    .addField("Server Count", bot.guilds.size)
+    .addField("User Count", bot.users.size)
     .addField("Ping", (Math.round(bot.ping) + " ms"));
 
     tempMessage.channel.send(embed);
