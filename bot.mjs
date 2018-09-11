@@ -55,7 +55,8 @@ bot.on("message", async message => {
     cmd = cmd.slice(prefix.length);
     console.log(`Command execution attempt: ${prefix}${cmd}${args}`);
     
-    let command = require(`./commands/${cmd}.js`);
+    import commands from './base/commandExport.mjs';
+    let command = commands[cmd]
     
     if(command){
         command.run(message, args, prefix);
