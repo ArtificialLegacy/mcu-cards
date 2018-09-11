@@ -2,6 +2,7 @@ import Command from '../base/commands.js';
 import settings from '../config.js';
 const Discord = settings.Discord;
 const bot = settings.bot;
+const d's = settings.fs;
 
 let help = new Command("help", 30, "info", "Displays info on all commands.", (tempMessage, tempArgs, tempPrefix) => {
   let cmdSort = {
