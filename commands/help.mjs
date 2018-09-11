@@ -4,14 +4,14 @@ const Discord = settings.Discord;
 const bot = settings.bot;
 const fs = settings.fs;
 
+import commands from '../base/commandExport.mjs';
+
 let help = new Command("help", 30, "info", "Displays info on all commands.", (tempMessage, tempArgs, tempPrefix) => {
   let cmdSort = {
     "info": [],
     "admin": [],
     "cards": []
   }
-  
-  import commands from '../base/commandExport.mjs';
   
   for (var sort in commands) {
     if (!commands.hasOwnProperty(sort)) {
