@@ -34,19 +34,15 @@ bot.on("guildDelete", async guild => {
 });
 
 bot.on("message", async message => {
-    let prefixes = JSON.parse(fs.readFileSync("./database/prefixes.json", "utf8"));
     
     let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
     let args = messageArray.slice(1);
     
-    if(!prefixes[message.guild.id]){
-        prefixes[message.guild.id] = {
-            prefix: "!"
-        };
+   let prefix = data.get(`${message.guild.id}.prefix`);
+    if(!prefix){
+        data.set(`${message.guild.id}.prefix`, "!");
     }
-    
-    let prefix = prefixes[message.guild.id].prefix;
     
     if(message.author.bot) return;
     if(message.channel.type === "dm") return;
