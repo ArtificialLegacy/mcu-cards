@@ -7,3 +7,5 @@ const commands = {
   prefix: prefix,
   help: help,
 }
+
+export default commands;
