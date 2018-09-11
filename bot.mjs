@@ -3,6 +3,7 @@ import settings from './setup.js';
 const Discord = settings.Discord;
 const fs = settings.fs;
 const bot = settings.bot;
+const data = settings.data;
 
 bot.on("ready", async () => {
     if(bot.guilds.size > 1) {
