@@ -20,3 +20,5 @@ let debug = new Command("debug", 0, "admin", "Bot debugging command. (Devs only)
 
     message.channel.send(embed);
 });
+
+export default debug;
