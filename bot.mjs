@@ -40,9 +40,10 @@ bot.on("message", async message => {
     let cmd = messageArray[0];
     let args = messageArray.slice(1);
     
-   let prefix = data.get(`${message.guild.id}.prefix`);
+    let key = `${message.guild.id}.prefix`;
+    let prefix = data.get(key);
     if(!prefix){
-        data.set(`${message.guild.id}.prefix`, "!");
+        data.set(key, "!");
     }
     
     if(message.author.bot) return;
