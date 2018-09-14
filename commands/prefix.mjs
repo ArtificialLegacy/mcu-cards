@@ -6,6 +6,10 @@ const fs = settings.fs;
 const data = settings.data;
 
 let prefix = new Command("prefix", 0, "admin", "Changes the guild command prefix.", (tempMessage, tempArgs, tempPrefix) => {
+    if(!message.member.hasPermission("ADMINISTRATOR")) {
+        message.reply("No permission!");
+        return;
+    }
     if(!tempArgs[0]) {
         return tempMessage.reply("Not prefix input.");
     }
