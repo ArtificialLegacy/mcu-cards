@@ -1,9 +1,11 @@
-import settings from './setup.js';
+import settings from './config.js';
 
 const Discord = settings.Discord;
 const fs = settings.fs;
 const bot = settings.bot;
 const data = settings.data;
+
+import commands from './base/commandExport.mjs';
 
 bot.on("ready", async () => {
     if(bot.guilds.size > 1) {
@@ -53,7 +55,6 @@ bot.on("message", async message => {
     cmd = cmd.slice(prefix.length);
     console.log(`Command execution attempt: ${prefix}${cmd}${args}`);
     
-    import commands from './base/commandExport.mjs';
     let command = commands[cmd]
     
     if(command){
