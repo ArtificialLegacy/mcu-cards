@@ -15,7 +15,7 @@ let debug = new Command("debug", 0, "admin", "Bot debugging command. (Devs only)
     .setDescription("Eval")
     .setColor("#8e278e")
     .addField("Requested User", message.author)
-    .addField("Input", args)
+    .addField("Input", tempArgs)
     .addField("Result", value);
 
     message.channel.send(embed);
