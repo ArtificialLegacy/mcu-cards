@@ -63,6 +63,7 @@ bot.on("message", async message => {
     } else {
         message.reply("Unknown command.");
     }
+    message.delete();
 });
 
 const token = JSON.parse(fs.readFileSync("./token.json", "utf8"));
