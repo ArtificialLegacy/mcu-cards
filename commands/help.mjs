@@ -54,7 +54,6 @@ let help = new Command("help", 30, "info", "Displays info on all commands.", (te
     }
     
     tempMessage.channel.send(embed);
-    //tempMessage.reply("A list of commands have been sent to your dms!");
 });
 
 export default help;
