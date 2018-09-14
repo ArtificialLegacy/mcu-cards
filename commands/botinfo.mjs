@@ -1,4 +1,4 @@
-import Command from '../base/commands.js';
+import Command from '../base/commands.mjs';
 import settings from '../config.js';
 const Discord = settings.Discord;
 const bot = settings.bot;
