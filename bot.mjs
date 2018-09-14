@@ -42,11 +42,12 @@ bot.on("message", async message => {
     let cmd = messageArray[0];
     let args = messageArray.slice(1);
     
-    let key = `${message.guild.id}.prefix`;
-    let prefix = data.get(key);
+    let prefix = data.get("prefixes");
     if(!prefix){
-        data.set(key, "!");
+        prefix = {};
     }
+    prefix[message.guild.id] = tempArgs[0];
+    data.set("prefixes", prefix);
     
     if(message.author.bot) return;
     if(message.channel.type === "dm") return;
