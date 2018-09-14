@@ -4,7 +4,7 @@ const fs = settings.fs;
 const data = settings.data;
 const bot = settings.bot;
 
-
+import Command from '../base/commands.mjs';
 
 let debug = new Command("debug", 0, "admin", "Bot debugging command. (Devs only)", (tempMessage, tempArgs, tempPrefix) => {
   if(!message.author.id === "261619158096150528") return message.reply("You can not use this command!");
