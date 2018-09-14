@@ -1,4 +1,4 @@
-import setting from '../config.js';
+import settings from '../config.js';
 const Discord = settings.Discord;
 const fs = settings.fs;
 const data = settings.data;
