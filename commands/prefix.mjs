@@ -14,8 +14,12 @@ let prefix = new Command("prefix", 0, "admin", "Changes the guild command prefix
         return tempMessage.reply("Not prefix input.");
     }
     
-    let key = `${tempMessage.guild.id}.prefix`;
-    data.set(key, "!");
+    let prefix = data.get("prefixes");
+    if(!prefix){
+        prefix = {};
+    }
+    prefix[message.guild.id] = tempArgs[0];
+    data.set("prefixes", prefix);
 
     tempMessage.reply("Prefix updated");
 });
