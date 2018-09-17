@@ -46,12 +46,14 @@ bot.on("message", async message => {
     if(!prefix){
         prefix = {};
     }
-    prefix[message.guild.id] = tempArgs[0];
-    data.set("prefixes", prefix);
+    if(!prefix[message.guild.id]){
+        prefix[message.guild.id] = "!";
+        data.set("prefixes", prefix);
+    }
     
     if(message.author.bot) return;
     if(message.channel.type === "dm") return;
-    if(!message.content.startsWith(prefix)) return;
+    if(!message.content.startsWith(prefix[message.guild.id)) return;
     
     cmd = cmd.slice(prefix.length);
     console.log(`Command execution attempt: ${prefix}${cmd}${args}`);
