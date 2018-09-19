@@ -44,6 +44,7 @@ let inventory = new Command("inventory", 10, "cards", "Opens your card inventory
   for(i = 0; i < 24; i++){
     embed.addField(items[i*page].name, items[i*page].description);
   }
+  tempMessage.channel.send(embed);
    
 });
 
