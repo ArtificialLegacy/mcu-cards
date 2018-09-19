@@ -53,7 +53,7 @@ bot.on("message", async message => {
     
     if(message.author.bot) return;
     if(message.channel.type === "dm") return;
-    if(!message.content.startsWith(prefix[message.guild.id)) return;
+    if(!message.content.startsWith(prefix[message.guild.id])) return;
     
     cmd = cmd.slice(prefix.length);
     console.log(`Command execution attempt: ${prefix}${cmd}${args}`);
