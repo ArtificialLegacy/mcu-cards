@@ -5,6 +5,7 @@ class Card {
     this.asset = tempAsset;
     this.price = tempPrice;
     this.rarity = tempRarity; // common, uncommon, rare, epic, legendary, mythical
+    this.type = "card";
   }
 }
 
@@ -15,6 +16,7 @@ class Pack {
     this.asset = tempAsset;
     this.price = tempPrice;
     this.content = tempContent;
+    this.type = "pack";
   }
 }
 
@@ -25,6 +27,7 @@ class Set {
     this.asset = tempAsset;
     this.price = tempPrice;
     this.content = tempContent;
+    this.type = "set";
   }
 }
 
