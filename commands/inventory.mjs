@@ -26,7 +26,12 @@ let inventory = new Command("inventory", 10, "cards", "Opens your card inventory
    tempMessage.reply("Your inventory is empty!");
    return;
   }
-  
+  let page = 0;
+  if(tempArgs[0]){
+    page = tempArgs[0];
+  } else {
+    page = 1;
+    }
 });
 
 export default inventory;
