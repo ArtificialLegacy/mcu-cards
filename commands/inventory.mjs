@@ -37,7 +37,7 @@ let inventory = new Command("inventory", 10, "cards", "Opens your card inventory
   }
   
   let embed = new Discord.RichEmbed()
-  .setTitle(`${tempMessage.author.username}'s Inventory (Page ${page}))
+  .setTitle(`${tempMessage.author.username}'s Inventory (Page ${page})`)
   .setColor()
   .setfooter("Inventory holds all cards, packs, and sets."):
   
