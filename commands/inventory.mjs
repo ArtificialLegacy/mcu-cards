@@ -30,6 +30,20 @@ let inventory = new Command("inventory", 10, "cards", "Opens your card inventory
   } else {
     page = 1;
   }
+  
+  let items = [];
+  for(var sort in inventories[tempMessage.guild.id][tempMessage.author.id]){
+    items.push(sort);
+  }
+  
+  let embed = new Discord.RichEmbed()
+  .setTitle(`${tempMessage.author.username}'s Inventory (Page ${page}))
+  .setColor()
+  .setfooter("Inventory holds all cards, packs, and sets."):
+  
+  for(i = 0; i < 24; i++){
+    
+  }
    
 });
 
