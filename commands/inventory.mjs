@@ -16,9 +16,9 @@ let inventory = new Command("inventory", 10, "cards", "Opens your card inventory
   }
   if(!inventories[tempMessage.guild.id][tempMessage.author.id]){
    inventories[tempMessage.guild.id][tempMessage.author.id] = {
-     cards: [],
-     packs: [],
-     sets: [],
+     cards: {},
+     packs: {},
+     sets: {},
    };
    data.set("inventory", inventories);
   }
@@ -31,7 +31,8 @@ let inventory = new Command("inventory", 10, "cards", "Opens your card inventory
     page = tempArgs[0];
   } else {
     page = 1;
-    }
+  }
+   
 });
 
 export default inventory;
