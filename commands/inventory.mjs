@@ -42,7 +42,7 @@ let inventory = new Command("inventory", 10, "cards", "Opens your card inventory
   .setfooter("Inventory holds all cards, packs, and sets."):
   
   for(i = 0; i < 24; i++){
-    
+    embed.addField(items[i*page].name, items[i*page].description);
   }
    
 });
