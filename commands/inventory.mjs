@@ -20,10 +20,7 @@ let inventory = new Command("inventory", 10, "cards", "Opens your card inventory
    };
    data.set("inventory", inventories);
   }
-  if(inventories[tempMessage.guild.id][tempMessage.author.id].cards.length == 0 && inventories[tempMessage.guild.id][tempMessage.author.id].packs.length == 0 && inventories[tempMessage.guild.id][tempMessage.author.id].sets.length == 0){
-   tempMessage.reply("Your inventory is empty!");
-   return;
-  }
+ 
   let page = 0;
   if(tempArgs[0]){
     page = tempArgs[0];
@@ -34,6 +31,11 @@ let inventory = new Command("inventory", 10, "cards", "Opens your card inventory
   let items = [];
   for(var sort in inventories[tempMessage.guild.id][tempMessage.author.id]){
     items.push(sort);
+  }
+  
+   if(items.length == 0){
+   tempMessage.reply("Your inventory is empty!");
+   return;
   }
   
   let embed = new Discord.RichEmbed()
