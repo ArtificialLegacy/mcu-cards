@@ -24,6 +24,12 @@ const cards = {
   },
   items: {
     
+  },
+  events: {
+    
+  },
+  locations: {
+
   }
 }
 
