@@ -14,9 +14,15 @@ let buy = new Command("buy", 10, "cards", "Open the shop and buy items", (tempMe
     return;
   }
   if(tempArgs[0] == "view"){
-    
+    let page = 1;
+    if(!tempArgs[1]){
+     page = 1; 
+    }
   } else if(tempArgs[0] == "buy"){
-    
+    if(!tempArgs[1]){
+      tempMessage.reply("No item input!");
+      return;
+    }
   } else {
     tempMessage.reply("Invalid subcommand! (view, buy)");
     return;
