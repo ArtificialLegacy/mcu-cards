@@ -20,6 +20,14 @@ let buy = new Command("buy", 10, "cards", "Open the shop and buy items", (tempMe
     } else {
       page = tempArgs[1];
     }
+    let items = [];
+    for(var sort in packs){
+      items.push(sort);
+    }
+    for(var sort in sets){
+      items.push(sort);
+    }
+    
     let indCheck = ((page-1)*24)+1;
     if(indCheck > items.length){
       tempMessage.reply("This page is empty!");
