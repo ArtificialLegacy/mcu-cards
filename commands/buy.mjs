@@ -17,6 +17,13 @@ let buy = new Command("buy", 10, "cards", "Open the shop and buy items", (tempMe
     let page = 1;
     if(!tempArgs[1]){
      page = 1; 
+    } else {
+      page = tempArgs[1];
+    }
+    let indCheck = ((page-1)*24)+1;
+    if(indCheck > items.length){
+      tempMessage.reply("This page is empty!");
+      return;
     }
   } else if(tempArgs[0] == "buy"){
     if(!tempArgs[1]){
