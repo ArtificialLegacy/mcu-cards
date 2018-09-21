@@ -33,9 +33,15 @@ let inventory = new Command("inventory", 10, "cards", "Opens your card inventory
     items.push(sort);
   }
   
-   if(items.length == 0){
+  if(items.length == 0){
    tempMessage.reply("Your inventory is empty!");
    return;
+  }
+  
+  let invCheck = ((page-1)*24)+1;
+  if(invCheck > items.length){
+    tempMessage.reply("This page is empty!");
+    return;
   }
   
   let embed = new Discord.RichEmbed()
@@ -44,6 +50,9 @@ let inventory = new Command("inventory", 10, "cards", "Opens your card inventory
   .setfooter("Inventory holds all cards, packs, and sets.");
   
   for(i = 0; i < 24; i++){
+    if(!items[i*page]){
+     break; 
+    }
     embed.addField(items[i*page].name, `${items[i*page].description} | ${items[i*page].type}`);
   }
   tempMessage.channel.send(embed);
